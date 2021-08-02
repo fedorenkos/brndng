@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:700i");
+
+:root {
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  font-style: italic;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  user-select: none;
+  &:focus {
+    outline: 0 none;
+  }
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  text-align: center;
+}
+
+body {
+  display: flex;
+  background-color: #28083a;
+  overflow: hidden;
+
+  &::after {
+    // Showed while branding loads ...
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background-color: inherit;
+    background: linear-gradient(to bottom, #0f093b, #000);
+    transition: opacity 0.5s ease-in, visibility 0s linear 0.5s;
+
+    .ready & {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  cursor: pointer;
+}
+
+#b-top {
+  flex: 1 0 0%;
+
+  display: flex;
+  align-items: stretch;
+}
+
+#b-left,
+#b-right {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+
+  background-color: rgba(#f00, 0.25);
+
+  .top.logo {
+    max-width: 300px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+
+    // &::after {
+    //   content: "";
+    //   display: block;
+    //   width: 100%;
+    //   padding-bottom: 50%;
+    // }
+
+    img {
+      position: absolute;
+      max-height: 95%;
+      max-width: 95%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+}

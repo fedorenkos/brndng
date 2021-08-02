@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto::400,500,700&subset=cyrillic,cyrillic-ext");
+@import "fluidtype";
+
+:root {
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  user-select: none;
+  &:focus {
+    outline: 0 none;
+  }
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  text-align: center;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background-color: inherit;
+    background: linear-gradient(to bottom, #141e30, #243b55);
+    transition: opacity 0.5s ease-in, visibility 0s linear 0.5s;
+
+    .ready & {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+#abn-wrap {
+  background-color: #141e30;
+  background: linear-gradient(to bottom, #141e30, #243b55);
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  border-radius: 2px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  cursor: pointer;
+}
+
+.brand {
+  flex: 1 0 0%;
+  margin: 5px;
+  //margin-right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  border-radius: 3px;
+  //background-color: #00bc4c;
+  background: linear-gradient(to bottom, rgba(#02080d, 0.8), rgba(#02080d, 0.25));
+
+  padding: 5px;
+}
+
+.panel {
+  border: 1px solid rgba(#22beef, 0.2);
+  background: linear-gradient(to top, rgba(#001739, 0.25), rgba(#02080d, 0.75));
+
+  position: relative;
+  overflow: hidden;
+
+  flex: 4 0 0%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 16px;
+  @include fluid-type-h(font-size, 150px, 400px, 8px, 18px);
+
+  padding: 5px;
+  margin: 5px;
+  margin-left: 0px;
+  border-radius: 3px;
+}

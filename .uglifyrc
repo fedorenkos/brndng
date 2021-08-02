@@ -1,0 +1,7 @@
+{
+  "keep_fnames": true,
+  "compress": {
+    "drop_console": true
+  },
+  mangle: false
+}

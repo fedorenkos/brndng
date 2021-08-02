@@ -1,0 +1,13 @@
+@element #b-left, #b-right and (max-width: 69px) {
+  :self {
+    visibility: hidden;
+  }
+}
+
+
+@element #b-left and (min-width: 70px) and (max-width: 199px) {
+  #b-left,
+  #b-right {
+    font-size: calc(10px + (21 - 10) * (100ew - 99px) / (199 - 99)) !important;
+  }
+}

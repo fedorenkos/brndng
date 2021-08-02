@@ -1,0 +1,9 @@
+{
+  mergeStyles: true,
+  mergeScripts: false,
+  minifyJs: false,
+  minifyCss: false,
+  collapseWhitespace: "all",
+  minifySvg: false,
+  minifyJson: false,
+}

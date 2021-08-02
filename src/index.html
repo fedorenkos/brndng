@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Branding</title>
+    <!-- Add style -->
+    <style>
+      #adv_brnd{
+        display:none;
+      }
+      #adv_link,#adv_link img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        top: 0;
+        left: 0;
+      }
+    </style>
+
+    <script type="text/javascript">
+
+    var adv_brnd,adv_link,desktop_width=1000,desktop_height=250,desktop_header=0,ZID=new Number,FEED=new String(''),URL=new String('');
+
+    /*
+    desktop_width  - site content width
+    desktop_header - height of the site top panel
+    desktop_height - height between top panel and site content
+    */
+
+  function listenerMessage(event){
+    if(typeof event !=undefined){
+      if(typeof event.data !=undefined && event.data !=null){
+        try{
+            var data = (typeof event.data == 'string')?JSON.parse(event.data):event.data;
+            if(typeof data.desktop_width    != "undefined" && data.desktop_width    != null ){
+              desktop_width   = parseInt(data.desktop_width);
+            }
+            if(typeof data.desktop_height   != "undefined" && data.desktop_height   != null ){
+              desktop_height  = parseInt(data.desktop_height);
+              desktop_height  = isNaN(desktop_height)?0:desktop_height;
+            }
+            if(typeof data.desktop_header   != "undefined" && data.desktop_header   != null ){
+              desktop_header  = parseInt(data.desktop_header);
+              desktop_header  = isNaN(desktop_header)?0:desktop_header;
+            }
+            if(typeof data.FEED != "undefined" && data.FEED != null ){
+              FEED = data.FEED;
+            }
+            if(typeof data.URL  != "undefined" && data.URL  != null ){
+              URL  = data.URL;
+              if(adv_link){
+                adv_link.href = URL;
+                /* for redirect use
+                href = URL +'&a='+ decodeURIComponent(...)
+                */
+              }
+            }
+            if(typeof data.ZID  != "undefined"  && data.ZID  != null){
+              ZID  = parseInt(data.ZID);
+              init();
+            }
+          }catch(e){}
+    }
+   }
+  }
+  function init(){
+    if(adv_brnd){
+       adv_brnd.style.display="block";
+    }
+  }
+  if (window.addEventListener) {
+      window.addEventListener("message", listenerMessage);
+  } else {
+      window.attachEvent("onmessage", listenerMessage);
+  }
+    </script>
+
+  </head>
+  <body>
+    <div id="adv_brnd">
+      <div id="top">
+
+              top
+
+      </div>
+      <div id="sides-container">
+          <div id="left">
+
+                  left
+
+          </div>
+          <div id="right">
+
+                  right
+
+          </div>
+      </div>
+      <a id="adv_link" href="" target="_blank">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+      </a>
+   </div>
+
+      <script type="text/javascript">
+        adv_brnd  = document.getElementById('adv_brnd');
+        adv_link  = document.getElementById('adv_link');
+      </script>
+
+  </body>
+  </html>

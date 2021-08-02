@@ -1,0 +1,28 @@
+{
+  "name": "branding.abn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "dt": "parcel src/_test-dt.html",
+    "mob": "parcel src/_test-mob.html",
+    "build": "parcel build src/_build.html --public-url ./ --no-source-maps --no-cache",
+    "preview": "parcel build src/_test-dt.html --public-url ./ --no-source-maps --no-cache",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.6.2",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "cssnano": "^4.1.10",
+    "node-sass": "^4.12.0",
+    "parcel-plugin-clean-dist": "0.0.6"
+  },
+  "dependencies": {
+    "core-js": "^2.*",
+    "image-preloader": "^1.1.1"
+  }
+}
