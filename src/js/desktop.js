@@ -17,16 +17,16 @@ function replaceClasses(doc) {
 }
 
 function handleResize() {
-  document.getElementById("b-left").style.width = "calc((100% - " + desktop_width + "px) / 2)";
-  document.getElementById("b-right").style.width = "calc((100% - " + desktop_width + "px) / 2)";
+  document.getElementById("left").style.width = "calc((100% - " + desktop_width + "px) / 2)";
+  document.getElementById("right").style.width = "calc((100% - " + desktop_width + "px) / 2)";
   document.body.style.paddingTop = desktop_header + "px";
 
-  document.getElementById("b-top").style.maxWidth = desktop_width + "px";
-  document.getElementById("b-top").style.height = desktop_height + "px";
+  document.getElementById("top").style.maxWidth = desktop_width + "px";
+  document.getElementById("top").style.height = desktop_height + "px";
 
   replaceClasses(document);
 
-  EQCSS.apply();
+  // EQCSS.apply();
 }
 
 window.init = function() {

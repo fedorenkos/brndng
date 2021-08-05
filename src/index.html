@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Branding</title>
+    <link rel="stylesheet" href="css/desktop.scss" />
+    <script type="text/eqcss" src="css/desktop.eqcss"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/eqcss/1.9.1/EQCSS.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <!-- Add style -->
     <style>
-      #adv_brnd{
+      /* #adv_brnd{
         display:none;
-      }
+      } */
       #adv_link,#adv_link img{
         position: absolute;
         width: 100%;
@@ -22,7 +27,7 @@
 
     <script type="text/javascript">
 
-    var adv_brnd,adv_link,desktop_width=1000,desktop_height=250,desktop_header=0,ZID=new Number,FEED=new String(''),URL=new String('');
+    var adv_brnd,adv_link,desktop_width=1000,desktop_height=150,desktop_header=100,ZID=new Number,FEED=new String(''),URL=new String('');
 
     /*
     desktop_width  - site content width
@@ -81,32 +86,72 @@
   </head>
   <body>
     <div id="adv_brnd">
+      
       <div id="top">
 
-              top
+        <div class="top center h-head-eq">
+            <div class="title_motto">
+              <p>Citius</p>
+              <p>Altius</p>
+              <p>Fortius</p>
+            </div>
+          <img src="img/comp.png" alt="comp">
+            <div class="scenario">
+                  Push
+            </div>
+          <img src="img/star.png" alt="star">
+        </div>
 
-      </div>
-      <div id="sides-container">
-          <div id="left">
+      </div><!-- /top-->
 
-                  left
+        <div id="sides-container">
+            <div  id="left">
 
-          </div>
-          <div id="right">
+                    <div class="sides h-head-eq">
+                        <div class="sides_motto">
+                          <p>Citius</p>
+                          <p>Altius</p>
+                          <p>Fortius</p>
+                        </div>
+                      <img src="img/comp.png" alt="comp">
+                        <div class="scenario">
+                              Push
+                        </div>
+                      <img src="img/star.png" alt="star">
+                    </div>
 
-                  right
+            </div><!-- /.brnd-aside left-->
+            <div id="right">
 
-          </div>
-      </div>
+              <div class="sides h-head-eq">
+                  <div class="sides_motto">
+                    <p>Citius</p>
+                    <p>Altius</p>
+                    <p>Fortius</p>
+                  </div>
+                <img src="img/comp.png" alt="comp">
+                  <div class="scenario">
+                        Push
+                  </div>
+                <img src="img/star.png" alt="star">
+              </div>
+
+            </div><!-- /.brnd-aside right-->
+        </div>  <!-- /sides-container-->
+    </div>  <!-- /.adv_brnd-->
       <a id="adv_link" href="" target="_blank">
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
       </a>
-   </div>
 
       <script type="text/javascript">
         adv_brnd  = document.getElementById('adv_brnd');
         adv_link  = document.getElementById('adv_link');
       </script>
-
+      <script>
+      // Remove this in production
+      window.parent.document.body.style.paddingTop = desktop_height + desktop_header + "px";
+      window.parent.document.getElementById("site-content").style.maxWidth = desktop_width + "px";
+    </script>
+    
   </body>
   </html>
